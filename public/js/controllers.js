@@ -37,12 +37,30 @@ phonecatControllers.controller('ReportsCtrl', ['$scope', 'backend', '$log',
         $log.info(err, reports)
         $scope.$apply(function(){
           $scope.reports = reports
-          $log.info($scope)
         })
       })
     }
 
     list();
+
+  }]
+);
+
+phonecatControllers.controller('ReportCtrl', ['$scope', 'backend', '$log', '$routeParams',
+  function($scope, backend, $log, $routeParams) {
+
+//    $scope = {reports:'foo'}
+
+    function get(id) {
+      backend.send('report', {action: 'get', id: id}, function(err, report) {
+        $log.info(err, report)
+        $scope.$apply(function(){
+          $scope.report = report
+        })
+      })
+    }
+
+    get($routeParams.reportId);
 
   }]
 );

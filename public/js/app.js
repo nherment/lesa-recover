@@ -32,6 +32,10 @@ phonecatApp.config(['$routeProvider',
         templateUrl: 'partials/reports.html',
         controller: 'ReportsCtrl'
       }).
+      when('/report/:reportId', {
+        templateUrl: 'partials/report.html',
+        controller: 'ReportCtrl'
+      }).
       otherwise({
         redirectTo: '/home'
       });
