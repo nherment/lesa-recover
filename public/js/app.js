@@ -28,6 +28,10 @@ phonecatApp.config(['$routeProvider',
         templateUrl: 'partials/decision-tree.html',
         controller: 'DecisionTreeCtrl'
       }).
+      when('/reports', {
+        templateUrl: 'partials/reports.html',
+        controller: 'ReportsCtrl'
+      }).
       otherwise({
         redirectTo: '/home'
       });

@@ -9,11 +9,6 @@ phonecatControllers.controller('HomeCtrl', ['$scope', 'backend',
 //    backend.send('hello')
   }]
 );
-phonecatControllers.controller('DecisionTreeCtrl', ['$scope', 'backend',
-  function($scope, backend) {
-//    backend.send('hello')
-  }]
-);
 
 phonecatControllers.controller('SignInCtrl', ['$scope', 'backend',
   function($scope, backend) {
@@ -22,6 +17,18 @@ phonecatControllers.controller('SignInCtrl', ['$scope', 'backend',
 );
 
 phonecatControllers.controller('SignUpCtrl', ['$scope', 'backend',
+  function($scope, backend) {
+//    backend.send('hello')
+  }]
+);
+
+phonecatControllers.controller('DecisionTreeCtrl', ['$scope', 'backend',
+  function($scope, backend) {
+//    backend.send('hello')
+  }]
+);
+
+phonecatControllers.controller('ReportsCtrl', ['$scope', 'backend',
   function($scope, backend) {
 //    backend.send('hello')
   }]
