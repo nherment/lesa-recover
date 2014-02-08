@@ -1,0 +1,11 @@
+// don't share private info
+deploy.sh
+
+// NODEJS ALL THE THINGS !!
+node_modules
+
+// webstorm sucks, every..single..time
+.idea
+
+// so does mac explorer
+.DS_Store
