@@ -18,4 +18,3 @@ phonecatControllers.controller('SignUpCtrl', ['$scope', 'backend',
   function($scope, backend) {
 //    backend.send('hello')
   }]);
-
