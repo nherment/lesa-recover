@@ -29,8 +29,20 @@ phonecatControllers.controller('DecisionTreeCtrl', ['$scope', 'backend',
 
 phonecatControllers.controller('ReportsCtrl', ['$scope', 'backend', '$log',
   function($scope, backend, $log) {
-    backend.send('report', 'hello', function(err, result) {
-      $log.info(err, result)
-    })
+
+//    $scope = {reports:'foo'}
+
+    function list() {
+      backend.send('report', {action: 'list'}, function(err, reports) {
+        $log.info(err, reports)
+        $scope.$apply(function(){
+          $scope.reports = reports
+          $log.info($scope)
+        })
+      })
+    }
+
+    list();
+
   }]
 );

@@ -48,11 +48,26 @@
                 <li><a href="">Another nav item</a></li>
             </ul>
         </div>
+
+
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <h1 class="page-header">Reports</h1>
 
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>name</th>
+                        <th>actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="report in reports">
+                        <td>{{report.name}}</td>
+                        <td><a href="#/report/{{report._id}}">view</a></td>
+                    </tr>
+                </tbody>
+            </table>
 
-            <h2 class="sub-header">Section title</h2>
 
         </div>
     </div>
