@@ -55,9 +55,27 @@ phonecatControllers.controller('ReportCtrl', ['$scope', 'backend', '$log', '$rou
       backend.send('report', {action: 'get', id: id}, function(err, report) {
         $log.info(err, report)
         $scope.$apply(function(){
+          $scope.reportId = id;
           $scope.report = report
         })
       })
+    }
+    function sendMessage(content) {
+      var message = {
+        content: content
+      }
+      backend.send('report', {action: 'pushMessage', reportId: $scope.reportId, message: message}, function(err, report) {
+        $log.info(err, report)
+        get($scope.reportId)
+      })
+    }
+
+    $scope.sendMessage = function() {
+      if($scope.newMessage) {
+        var content = $scope.newMessage
+        $scope.newMessage = '';
+        sendMessage(content)
+      }
     }
 
     get($routeParams.reportId);

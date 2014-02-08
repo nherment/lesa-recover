@@ -82,7 +82,7 @@
                 </div>
             </form>
 
-            <form class="form-horizontal" role="form">
+            <form class="form-horizontal" role="form" ng-submit="sendMessage()">
 
                 <div class="form-group">
                     <label for="newMessage" class="col-sm-2 control-label">New Message</label>
@@ -96,12 +96,10 @@
                     </div>
                 </div>
             </form>
+
             <form class="form-horizontal" role="form" ng-repeat="message in report.messages">
-                <label class="col-sm-2 control-label">From</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" value="{{message.from}}">
-                </div>
                 <div class="form-group">
+                    <label class="col-sm-2 control-label">{{message.from}}</label>
                     <div class="col-sm-10">
                         <textarea class="form-control" rows="3" disabled>{{message.content}}</textarea>
                     </div>
